@@ -15,11 +15,13 @@
   "dependencies": {
     "@prisma/client": "latest",
     "next": "latest",
+    "papaparse": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
+    "@types/papaparse": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
