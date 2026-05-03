@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Item {
+  id               Int      @id @default(autoincrement())
+  title            String
+  creators_display String?
+  media_type       String?
+  year             Int?
+  library_collection String?
+  enrichment_status String? @default("not_started")
+  created_at       DateTime @default(now())
+  updated_at       DateTime @updatedAt
+}
+
+model ImportBatch {
+  id            Int      @id @default(autoincrement())
+  filename      String
+  imported_at   DateTime @default(now())
+  total_rows    Int
+  accepted_rows Int
+  rejected_rows Int
+}
+
+model DataIssue {
+  id        Int      @id @default(autoincrement())
+  message   String
+  severity  String
+  status    String   @default("open")
+  created_at DateTime @default(now())
+}
