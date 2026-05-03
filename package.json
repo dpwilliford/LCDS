@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@prisma/client": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
@@ -20,7 +24,12 @@
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
+    "prisma": "latest",
     "tailwindcss": "latest",
+    "tsx": "latest",
     "typescript": "latest"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
